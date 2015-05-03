@@ -1,0 +1,44 @@
+{
+  "name": "generator-wp-project",
+  "version": "0.1.0",
+  "description": "A Yeoman generator for WordPress Projects",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "homepage": "https://github.com/functionlabs/generator-wp-project",
+  "bugs": "https://github.com/functionlabs/generator-wp-project/issues",
+  "author": {
+    "name": "Kevin Langley",
+    "email": "",
+    "url": "https://github.com/functionlabs"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/functionlabs/generator-wp-project.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0",
+    "underscore.string": "~2.3.1",
+    "lodash": "~1.3.0",
+    "chalk": "~0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
