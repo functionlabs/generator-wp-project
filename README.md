@@ -15,7 +15,8 @@ $ npm install -g yo
 ### 2) Install the WP Project generator
 
 ```
-$ npm install -g generator-wp-project
+$ git clone git@github.com:functionlabs/generator-wp-project.git && cd generator-wp-project
+$ npm link
 ```
 
 ### 3) Run the generator.
