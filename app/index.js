@@ -57,6 +57,15 @@ WPProjectGenerator.prototype.askFor = function askFor() {
       }
     },
     {
+        name: 'projectGitRepoUrl',
+        message: 'What is the Git Repository URL?',
+        default: function(answers) {
+          var owner = _.slugify(answers.projectAuthorSlug),
+              slug = _.slugify(answers.projectSlug)
+          return 'git@github.com:' + owner + '/' + slug + '.git';
+        }
+    },
+    {
       name: 'generateTheme',
       type: 'confirm',
       message: 'Would you like to generate a theme from a template theme?',
@@ -96,6 +105,7 @@ WPProjectGenerator.prototype.askFor = function askFor() {
     this.projectName = props.projectName;
     this.projectSlug = props.projectSlug;
     this.projectAuthorSlug = props.projectAuthorSlug;
+    this.projectGitRepoUrl = props.projectGitRepoUrl;
     this.generateTheme = props.generateTheme;
     if(this.generateTheme) {
       this.themeName = props.themeName;

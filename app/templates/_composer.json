@@ -15,7 +15,8 @@
     ],
     "config": {
         "vendor-dir": "wp-content/mu-plugins",
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "secure-http": false
     },
     "require"     : {
         "functionlabs/wordpress": ">=4.0.0",

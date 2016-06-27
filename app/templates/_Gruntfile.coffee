@@ -1,6 +1,6 @@
 #
 # <%= projectName %>
-# https://github.com/<%= projectAuthorSlug %>/<%= projectSlug %>
+# <%= projectGitRepoUrl %>
 #
 
 'use strict'
