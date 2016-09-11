@@ -21,3 +21,5 @@ sitemap.xml*
 /wp-config.php
 /wp-content/uploads/*
 /wp-content/cache/*
+
+/bower_components
