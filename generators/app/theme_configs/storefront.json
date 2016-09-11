@@ -1,0 +1,41 @@
+{
+  "url": "git@github.com:functionlabs/storefront.git",
+  "replacements": [
+    {
+      "find": "Theme Name:       Storefront",
+      "replace": "Theme Name:       <%= projectName %>"
+    },
+    {
+      "find": "Text Domain:    storefront",
+      "replace": "Text Domain:    <%= themeTextDomain %>"
+    },
+    {
+      "find": "'storefront'",
+      "replace": "'<%= themeTextDomain %>'"
+    },
+    {
+      "find": "\"storefront\"",
+      "replace": "\"<%= themeSlug %>\""
+    },
+    {
+      "find": "storefront-",
+      "replace": "<%= themeSlug %>-"
+    },
+    {
+      "find": "storefront_",
+      "replace": "<%= themeUnderScored %>_"
+    },
+    {
+      "find": " storefront",
+      "replace": " <%= themeName %>"
+    },
+    {
+      "find": "Storefront",
+      "replace": "<%= themeClass %>"
+    },
+    {
+      "find": "storefront",
+      "replace": "<%= themeSlug %>"
+    }
+  ]
+}

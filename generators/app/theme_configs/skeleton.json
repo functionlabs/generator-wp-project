@@ -1,0 +1,33 @@
+{
+  "url": "git@github.com:functionlabs/skeleton.git",
+  "replacements": [
+    {
+      "find": "Text Domain: skeleton",
+      "replace": "Text Domain: <%= themeTextDomain %>"
+    },
+    {
+      "find": "'skeleton'",
+      "replace": "'<%= themeTextDomain %>'"
+    },
+    {
+      "find": "skeleton-",
+      "replace": "<%= themeSlug %>"
+    },
+    {
+      "find": "skeleton_",
+      "replace": "<%= themeUnderScored %>_"
+    },
+    {
+      "find": "functionlabs",
+      "replace": "<%= projectAuthorSlug %>"
+    },
+    {
+      "find": "([\\W])skeleton",
+      "replace": "$1<%= themeSlug %>"
+    },
+    {
+      "find": "([\\W])Skeleton",
+      "replace": "$1<%= themeName %>"
+    }
+  ]
+}
