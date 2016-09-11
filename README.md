@@ -13,7 +13,7 @@ npm install -g generator-wp-project
 Then generate your new project:
 
 ```bash
-yo wp
+yo wp-project
 ```
 
 ## Getting To Know Yeoman
