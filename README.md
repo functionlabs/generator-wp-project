@@ -1,29 +1,36 @@
-# generator-wp-project
+# generator-wp-project [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+> 
 
-A generator for WordPress projects using [Yeoman](http://yeoman.io).
+## Installation
 
-Running this generator will create a new WordPress project, setup a theme based on [Skeleton](https://github.com/functionlabs/skeleton) or [_s](https://github.com/automattic/_s) and initialize your grunt and composer files.
+First, install [Yeoman](http://yeoman.io) and generator-wp-project using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-## Getting Started
-
-### 1) Install Yeoman.
-
-```
-$ npm install -g yo
+```bash
+npm install -g yo
+npm install -g generator-wp-project
 ```
 
-### 2) Install the WP Project generator
+Then generate your new project:
 
-```
-$ git clone git@github.com:functionlabs/generator-wp-project.git && cd generator-wp-project
-$ npm link
-```
-
-### 3) Run the generator.
-
-```
-$ cd {your empty project directory}
-$ yo wp-project
+```bash
+yo wp
 ```
 
-### 4) Commit the new project to the Project's Git Repo.
+## Getting To Know Yeoman
+
+ * Yeoman has a heart of gold.
+ * Yeoman is a person with feelings and opinions, but is very easy to work with.
+ * Yeoman can be too opinionated at times but is easily convinced not to be.
+ * Feel free to [learn more about Yeoman](http://yeoman.io/).
+
+## License
+
+Apache-2.0 © [Kevin Langley]()
+
+
+[npm-image]: https://badge.fury.io/js/generator-wp-project.svg
+[npm-url]: https://npmjs.org/package/generator-wp-project
+[travis-image]: https://travis-ci.org/functionlabs/generator-wp-project.svg?branch=master
+[travis-url]: https://travis-ci.org/functionlabs/generator-wp-project
+[daviddm-image]: https://david-dm.org/functionlabs/generator-wp-project.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/functionlabs/generator-wp-project

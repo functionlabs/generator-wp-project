@@ -1,1 +1,0 @@
-drop-ins/memcached/object-cache.php

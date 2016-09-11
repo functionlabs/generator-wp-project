@@ -1,41 +1,52 @@
 {
   "name": "generator-wp-project",
-  "version": "0.1.0",
-  "description": "A Yeoman generator for WordPress Projects",
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "homepage": "https://github.com/functionlabs/generator-wp-project",
-  "bugs": "https://github.com/functionlabs/generator-wp-project/issues",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "",
   "author": {
     "name": "Kevin Langley",
-    "email": "",
-    "url": "https://github.com/functionlabs"
+    "email": "me@kevinlangleyjr.com",
+    "url": ""
   },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/functionlabs/generator-wp-project.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
   "dependencies": {
-    "yeoman-generator": "~0.14.0",
-    "underscore.string": "~2.3.1",
-    "lodash": "~1.3.0",
-    "chalk": "~0.3.0"
+    "chalk": "^1.0.0",
+    "lodash": "^4.15.0",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.23.0",
+    "yosay": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "yeoman-test": "^1.0.0",
+    "yeoman-assert": "^2.0.0",
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.14.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
   },
-  "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
     }
-  ]
+  },
+  "repository": "functionlabs/generator-wp-project",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "Apache-2.0"
 }
