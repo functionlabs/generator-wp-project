@@ -211,15 +211,24 @@ module.exports = yeoman.Base.extend({
         this.copy('gitignore', '.gitignore');
       }
 
+      if( fs.existsSync(themeDir + '/bower.json') ){
+        themeContent = this.fs.read(themeDir + '/bower.json');
+        //need to replace the theme strings with the project names
+        for(var i =0; i < this.replacements.length; i++) {
+          themeContent = themeContent.replace(this.replacements[i].find, this.replacements[i].replace);
+        }
+
+        fs.writeFileSync('bower.json', themeContent);
+      }
+
       if( ! ( fs.existsSync(themeDir + '/Gruntfile.js')
         || fs.existsSync(themeDir + '/gruntfile.js')
         || fs.existsSync(themeDir + '/Gruntfile.coffee')
         || fs.existsSync(themeDir + '/gruntfile.coffee') ) ) {
-        this.copyTpl('_Gruntfile.coffee', 'Gruntfile.coffee');
-        this.fs.copyTpl( this.templatePath('_Gruntfile.coffee'),
-          this.destinationPath('Gruntfile.coffee'),
-          this
-        );
+          this.fs.copyTpl( this.templatePath('_Gruntfile.coffee'),
+            this.destinationPath('Gruntfile.coffee'),
+            this
+          );
       }
 
       this.copy('index.php', 'index.php');
@@ -287,13 +296,16 @@ module.exports = yeoman.Base.extend({
         if ( gruntfileRegex.test( file ) ) {
           fileContents = fileContents.replace( pathsRegex, function(match) {
             match = match.replace(/['"]/g, '');
+            if( match.substring(0, 5) === 'root/' ) {
+              return "'" + match.substring(5) + "'";
+            }
             if( match.substring(0, 2) === './' ) {
-              return '"' + themePath + match.substring(2) + '"';
+              return "'" + themePath + match.substring(2) + "'";
             }
             if( match.charAt(0) === '!' ) {
-              return '"!' + themePath + match.substring(1) + '"';
+              return "'!" + themePath + match.substring(1) + "'";
             } else {
-              return '"' + themePath + match + '"';
+              return "'" + themePath + match + "'";
             }
           });
           //we're directly using fs to avoid the duplicate checks
