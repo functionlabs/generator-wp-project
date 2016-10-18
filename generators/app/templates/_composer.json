@@ -6,21 +6,20 @@
     "repositories": [
         {
             "type": "composer",
-            "url" : "http://wpackagist.org/"
+            "url" : "https://wpackagist.org/"
         },
         {
             "type": "composer",
-            "url" : "http://packagist.functionlabs.io"
+            "url" : "https://packagist.functionlabs.io"
         }
     ],
     "config": {
         "vendor-dir": "wp-content/mu-plugins",
-        "bin-dir": "bin",
-        "secure-http": false
+        "bin-dir": "bin"
     },
     "require"     : {
         "functionlabs/wordpress": ">=4.0.0",
-        "wpackagist-plugin/memcached": "~2.0.2"
+        "functionlabs/memcached": ">=1.0.0"
     },
     "require-dev" : {
         "wpackagist-plugin/debug-bar": "9999999-dev",
@@ -33,7 +32,7 @@
     "extra"       : {
         "installer-paths": {
             "wp/": ["functionlabs/wordpress"],
-            "wp-content/drop-ins/{$name}/": ["wpackagist-plugin/memcached"]
+            "wp-content/drop-ins/{$name}/": ["functionlabs/memcached"]
         }
     }
 }

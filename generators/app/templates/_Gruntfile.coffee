@@ -36,7 +36,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-peon-build'
-  grunt.loadNpmTasks 'grunt-peon-gui'
   grunt.loadNpmTasks 'grunt-composer'
   grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-hub'
