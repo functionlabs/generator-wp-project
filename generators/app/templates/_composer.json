@@ -19,7 +19,8 @@
     },
     "require"     : {
         "functionlabs/wordpress": ">=4.0.0",
-        "functionlabs/memcached": ">=1.0.0"
+        "functionlabs/memcached": ">=1.0.0",
+        "functionlabs/hyperdb": ">=1.0.0"
     },
     "require-dev" : {
         "wpackagist-plugin/debug-bar": "9999999-dev",
