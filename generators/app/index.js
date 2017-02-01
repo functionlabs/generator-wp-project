@@ -68,6 +68,19 @@ module.exports = yeoman.Base.extend({
         }
       },
       {
+        name: 'themeSlug',
+        message: 'What would like like the slug of your theme to be?',
+        default: function(answers) {
+          return _s.slugify(answers.themeName);
+        },
+        when: function(answers) {
+          return answers.generateTheme;
+        },
+        filter: function(themeSlug) {
+          return _s.slugify(themeSlug);
+        }
+      },
+      {
         name: 'themeBase',
         type: 'list',
         message: 'What base theme would you like to use?',
@@ -80,6 +93,25 @@ module.exports = yeoman.Base.extend({
         when: function(answers) {
           return answers.generateTheme;
         }
+      },
+      {
+        name: 'themeClass',
+        message: 'What class would you like your theme to use?',
+        default: function(answers) {
+          var themeBase = answers.themeBase;
+          var themeSlug = _s.slugify(answers.themeName);
+          var themeNameParts = _.split(themeSlug.replace(/\-/g, '_'), '_');
+          themeNameParts = themeNameParts.map(function(part){
+            return _.upperFirst(part);
+          });
+          return _.join(themeNameParts, '');
+        },
+        when: function(answers) {
+          return answers.generateTheme;
+        },
+        filter: function(themeClass) {
+          return themeClass.replace(/\-/g, '');
+        }
       }
     ];
 
@@ -91,19 +123,15 @@ module.exports = yeoman.Base.extend({
       this.generateTheme = answers.generateTheme;
       if(this.generateTheme) {
         this.themeName = answers.themeName;
-        this.themeSlug = _s.slugify(this.themeName);
+        this.themeSlug = answers.themeSlug;
         this.themeUnderScored = this.themeSlug.replace(/\-/g, '_');
         this.themeTextDomain = this.themeUnderScored;
         this.themeBase = answers.themeBase;
-        var themeNameParts = _.split(this.themeUnderScored, '_');
-        themeNameParts = themeNameParts.map(function(part){
-          return _.upperFirst(part);
-        });
-        this.themeClass = _.join(themeNameParts, '_');
+        this.themeClass = answers.themeClass;
       } else {
         //default to project based names for templates, may change so these are additional questions in the future
         this.themeName = answers.projectName;
-        this.themeSlug = _s.slugify(this.themeName);
+        this.themeSlug = answers.projectSlug;
       }
 
     }.bind(this));
