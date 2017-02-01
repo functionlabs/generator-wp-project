@@ -180,7 +180,7 @@ module.exports = yeoman.Base.extend({
         themeContent = JSON.parse( this.fs.read( themeDir + '/composer.json') );
         _.merge(defaultContent.require, themeContent.require);
         _.merge(defaultContent['require-dev'], themeContent['require-dev']);
-        defaultContent.repositories = _.uniq(_.union(themeContent.repositories || [], defaultContent.repositories), 'url');
+        defaultContent.repositories = _.uniqBy(_.union(themeContent.repositories || [], defaultContent.repositories), 'url');
         fs.writeFileSync('composer.json', JSON.stringify(defaultContent, null, 4));
       } else {
         this.template('_composer.json', 'composer.json');
