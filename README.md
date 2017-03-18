@@ -25,7 +25,7 @@ yo wp-project
 
 ## License
 
-Apache-2.0 © [Kevin Langley]()
+Apache-2.0 © [Kevin Langley Jr](http://kevinlangleyjr.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-wp-project.svg
